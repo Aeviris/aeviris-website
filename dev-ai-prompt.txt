@@ -1,0 +1,7 @@
+Build a premium homepage for “Aeviris” using React + Tailwind CSS.
+Style: dark theme, glassmorphism, soft neon gradients, futuristic AI vibe.
+Sections: Hero (vision-first), What We Build (AI Products, Systems, Platforms, Learning), Current Product (Aeviris app), Why Aeviris, Vision & Mission, Roadmap, CTA, Footer.
+Add subtle animations with Framer Motion.
+Mobile-first, responsive, fast load.
+Include CTA buttons for “Download App” and “Explore Products”.
+Keep the copy visionary and brand-forward (AI innovation company, not just learning apps).
