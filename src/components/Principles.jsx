@@ -23,9 +23,9 @@ export default function Principles(){
             whileHover={{translateY:-6, scale:1.02}}
             transition={{type:'spring', stiffness:200}}
           >
-            <div className="w-10 h-10 rounded-md flex items-center justify-center text-xl bg-gradient-to-br from-purple-500 to-sky-400 text-white">{p.icon}</div>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-sky-400 text-white shadow-lg">{p.icon}</div>
             <div>
-              <div className="font-semibold">{p.title}</div>
+              <div className="text-white text-lg font-semibold">{p.title}</div>
               <div className="text-slate-300 text-sm mt-1">{p.desc}</div>
             </div>
           </motion.div>
