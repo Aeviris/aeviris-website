@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const principles = [
-  {icon:'⚡', title:'Velocity > Perfection', desc:'Ship fast, iterate with data.'},
+  {icon:'⚡', title:'Velocity + Perfection', desc:'Ship fast, iterate with perfection.'},
   {icon:'🧠', title:'Intelligence over automation', desc:'Smarter systems, not just scripts.'},
   {icon:'🛡️', title:'Privacy by design', desc:'User data safety is a core constraint.'},
   {icon:'🧪', title:'Research-backed innovation', desc:'Ship ideas validated by experiments.'}
