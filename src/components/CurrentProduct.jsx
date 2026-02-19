@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import coursesImg from '../../home_page_courses.jpg'
 
 export default function CurrentProduct(){
   const [show, setShow] = useState(false)
@@ -23,14 +24,14 @@ export default function CurrentProduct(){
             </div>
           </div>
 
-          <div className="flex justify-center relative">
+          <div className="flex justify-center relative" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
             <div className="app-frame glass flex items-center justify-center">
-              <button aria-label="Preview courses" className="image-preview-btn pill" onMouseEnter={() => setShow(true)} onFocus={() => setShow(true)} onMouseLeave={() => setShow(false)} onBlur={() => setShow(false)}>Hover to preview</button>
+              <button aria-label="Preview courses" className="image-preview-btn pill" onFocus={() => setShow(true)} onBlur={() => setShow(false)}>Hover to preview</button>
             </div>
 
             <div className={`product-image-wrapper ${show ? 'visible' : ''}`}>
               <div className="product-image-halo" />
-              <img src="/home_page_courses.jpg" alt="Courses preview" className="product-full-image float-slow" />
+              <img src={coursesImg} alt="Courses preview" className="product-full-image float-slow" />
             </div>
           </div>
         </div>
