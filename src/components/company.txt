@@ -1,0 +1,326 @@
+COMPANY
+About
+Building AI That Truly Matters.
+
+AEVIRIS is an artificial intelligence research and product company focused on creating intelligent software that solves meaningful real-world problems. We believe AI should be practical, accessible, trustworthy, and capable of improving how people learn, work, and build.
+
+Our work combines cutting-edge research with product engineering to transform complex AI technologies into experiences that anyone can use.
+
+From machine learning and computer vision to large language models, edge AI, and autonomous AI agents, we build products designed for performance, simplicity, and long-term impact.
+
+We don't chase trends.
+
+We build technology that lasts.
+
+Every product at AEVIRIS is designed around one simple philosophy:
+
+Build products that genuinely improve people's lives.
+
+As AI continues to reshape every industry, our mission is to create solutions that empower individuals, businesses, developers, educators, researchers, and future innovators across the world.
+
+Today we're building.
+
+Tomorrow we're shaping the future.
+
+Our Mission
+
+To build intelligent AI products that solve meaningful problems while making advanced artificial intelligence accessible to everyone.
+
+Our Vision
+
+To become one of the world's most trusted AI companies by building innovative technologies that transform education, productivity, healthcare, robotics, business, and everyday life.
+
+What We Build
+
+• Artificial Intelligence Products
+
+• Machine Learning Systems
+
+• Agentic AI Platforms
+
+• Large Language Model Applications
+
+• Computer Vision Solutions
+
+• Edge AI Applications
+
+• AI Developer Tools
+
+• AI APIs
+
+• AI Research Projects
+
+• Intelligent Automation Platforms
+
+Core Values
+Innovation
+
+We challenge conventional thinking and continuously explore new ideas.
+
+Simplicity
+
+Powerful technology should feel effortless to use.
+
+Integrity
+
+Trust, transparency, and responsible AI are fundamental to everything we build.
+
+Research First
+
+Every major product begins with deep research and experimentation.
+
+User Obsession
+
+Every decision starts with the people using our products.
+
+Long-Term Thinking
+
+We're building for the next decade—not the next trend.
+
+Team
+Small Team. Big Vision.
+
+AEVIRIS is driven by passionate builders, researchers, engineers, designers, and innovators working together to create products that matter.
+
+We believe great companies are built by curious people who enjoy solving difficult problems.
+
+Our culture encourages continuous learning, experimentation, ownership, and collaboration.
+
+Whether it's designing better AI systems, improving user experiences, or exploring breakthrough research, every team member contributes toward one shared goal:
+
+Creating AI that benefits everyone.
+
+Leadership
+Founder & CEO
+
+Ankit Kashyap
+
+Founder of AEVIRIS with a passion for building AI products that combine research, engineering, and real-world impact.
+
+Focused on:
+
+• Artificial Intelligence
+
+• Machine Learning
+
+• Agentic AI
+
+• Product Engineering
+
+• AI Research
+
+• Edge AI
+
+• Innovation
+
+Our Culture
+
+• Learn Every Day
+
+• Think Bigger
+
+• Move Fast
+
+• Build Responsibly
+
+• Respect Every Voice
+
+• Stay Curious
+
+• Never Stop Improving
+
+Partners
+Building the Future Together.
+
+Innovation happens through collaboration.
+
+AEVIRIS partners with organizations, startups, universities, research communities, cloud providers, and technology companies to accelerate the development of impactful AI solutions.
+
+We welcome partnerships in:
+
+• Artificial Intelligence Research
+
+• Product Development
+
+• Enterprise AI
+
+• Education Technology
+
+• Healthcare AI
+
+• Robotics
+
+• Cloud Infrastructure
+
+• Open Source
+
+• Startup Collaboration
+
+• Academic Research
+
+Interested in working together?
+
+We'd love to hear from you.
+
+Careers
+Join Us in Building the Future of AI.
+
+At AEVIRIS, you'll work on ambitious projects, cutting-edge technologies, and products that have the potential to impact millions of people.
+
+We're looking for curious minds who enjoy solving difficult problems and turning bold ideas into reality.
+
+Whether you're an experienced engineer, a researcher, a designer, or a student eager to learn, we value passion, creativity, and a willingness to grow.
+
+Why Join AEVIRIS?
+
+✓ Work on real AI products
+
+✓ Solve meaningful challenges
+
+✓ Learn from research-driven development
+
+✓ Ownership from day one
+
+✓ Build technology with global impact
+
+✓ Flexible and collaborative culture
+
+We're Interested In
+
+AI Engineers
+
+Machine Learning Engineers
+
+Software Engineers
+
+Frontend Developers
+
+Backend Developers
+
+Mobile Developers
+
+Cloud Engineers
+
+Data Scientists
+
+AI Researchers
+
+Computer Vision Engineers
+
+NLP Engineers
+
+LLM Engineers
+
+Prompt Engineers
+
+UI/UX Designers
+
+Technical Writers
+
+Developer Relations
+
+Interns
+
+Open Source Contributors
+
+Even if your role isn't listed, we'd still love to hear from you.
+
+Contact
+We'd Love to Hear From You.
+
+Whether you have questions, partnership opportunities, business inquiries, media requests, or simply want to say hello, our team is here to help.
+
+Contact Categories
+
+General Inquiry
+
+Business Partnership
+
+Enterprise Solutions
+
+Technical Support
+
+Careers
+
+Media
+
+Research Collaboration
+
+Investment Opportunities
+
+Business Hours
+
+Monday – Friday
+
+9:00 AM – 6:00 PM (IST)
+
+Response Time
+
+Most inquiries receive a response within 24–48 business hours.
+
+Blog
+Ideas. Research. Innovation.
+
+The AEVIRIS Blog shares insights, tutorials, engineering stories, research updates, product announcements, and practical knowledge from our team.
+
+Topics include:
+
+Artificial Intelligence
+
+Machine Learning
+
+Large Language Models
+
+Agentic AI
+
+Computer Vision
+
+Deep Learning
+
+Edge AI
+
+MLOps
+
+Product Engineering
+
+AI Research
+
+Developer Guides
+
+Startup Journey
+
+Engineering Behind the Scenes
+
+Open Source
+
+Technology Trends
+
+Our goal is simple:
+
+Share knowledge that helps developers, researchers, students, and businesses build the next generation of intelligent products.
+
+Ek suggestion jo website ko aur premium bana de
+
+Agar tum world-class AI companies (OpenAI, Anthropic, NVIDIA, Scale AI, Hugging Face) jaisi positioning chahte ho, to Company page me sirf ye 6 sections hi nahi, balki ye additional pages bhi include karo:
+
+Company Overview
+Mission & Vision
+Leadership
+Research
+Products
+Technology
+Security
+Privacy
+Responsible AI
+Ethics
+Press Kit
+Newsroom
+Investors (future)
+Brand Assets
+Open Source
+Case Studies
+Community
+Events
+Careers
+Contact
+Blog

@@ -1,49 +1,78 @@
-import React from 'react'
-import Hero from './components/Hero'
-import WhatWeBuild from './components/WhatWeBuild'
-import CurrentProduct from './components/CurrentProduct'
-import WhyAeviris from './components/WhyAeviris'
-import VisionMission from './components/VisionMission'
-import Labs from './components/Labs'
-import FounderNote from './components/FounderNote'
-import Footer from './components/Footer'
-import Header from './components/Header'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import Header, { Icon } from './components/Header'
+import CompanyPage from './components/CompanyPage'
+import ProductsPage from './components/ProductsPage'
+import AboutPage from './components/AboutPage'
+import CareersPage from './components/CareersPage'
 
-export default function App(){
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-grow">
-        <Hero />
-        <section className="max-w-5xl mx-auto py-20 px-6 text-gray-300 backdrop-blur-md bg-white/5 rounded-2xl">
-        <h2 className="text-3xl font-bold mb-4">What is Aeviris?</h2>
-        <p className="mb-6">
-        Aeviris is an AI innovation company and AI research startup focused on building
-        next-generation artificial intelligence systems, large language models (LLMs),
-        research tools, and developer platforms. We design intelligent products for
-        education, productivity, and future AI infrastructure.
-        </p>
+const values = [
+  ['✦', 'Innovation', 'Challenge assumptions. Explore what is possible.'],
+  ['◇', 'Integrity', 'Build trust through clarity, responsibility, and care.'],
+  ['⌁', 'Research First', 'Go deeper before moving faster.'],
+  ['◎', 'User First', 'Start with the people whose lives we improve.'],
+  ['＋', 'Simplicity', 'Make powerful technology feel effortless.'],
+  ['∞', 'Long-Term Thinking', 'Build for the next decade, not the next trend.'],
+]
 
+const stats = [['01', 'Projects', '12+'], ['02', 'Products', '04'], ['03', 'Research Areas', '08'], ['04', 'Countries Served', '06']]
+const team = [['AK', 'Ankit Kashyap', 'Founder & CEO', 'Building AI products where research, engineering, and impact meet.'], ['AI', 'Aeviris Intelligence', 'Research Collective', 'Curious minds exploring the next layer of useful intelligence.'], ['YO', 'Your next chapter', 'Join the team', 'Bring your craft, your questions, and your ambition.']]
+const jobs = [['AI Engineer', 'Remote / India', 'Research & Engineering', '2+ years'], ['Product Designer', 'Remote', 'Product', '3+ years'], ['Research Intern', 'Bengaluru / Remote', 'AI Research', 'Early career']]
 
-        <h2 className="text-3xl font-bold mb-4">Founder</h2>
-        <p>
-        Aeviris is founded by a solo builder focused on AI systems, product engineering,
-        and next-generation research. The mission is to build foundational AI technology
-        from India for the world — spanning LLMs, AI products, and future intelligence platforms.
-        </p>
-
-        </section>
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          <WhatWeBuild />
-          <CurrentProduct />
-          <WhyAeviris />
-          <VisionMission />
-          <Labs />
-          <FounderNote />
-        </div>
-      </main>
-      <Footer />
-    </div>
-  )
+function Reveal({ children, className = '', delay = 0 }) {
+  return <motion.div className={className} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: .55, delay }}>{children}</motion.div>
 }
+
+function SectionHeading({ eyebrow, title, copy }) {
+  return <div className="section-heading"><p className="eyebrow">{eyebrow}</p><h2>{title}</h2>{copy && <p className="section-copy">{copy}</p>}</div>
+}
+
+function App() {
+  if (window.location.pathname === '/company') return <><Header /><CompanyPage /></>
+  if (window.location.pathname === '/company/about') return <><Header /><AboutPage /></>
+  if (window.location.pathname === '/products') return <><Header /><ProductsPage /></>
+  if (window.location.pathname === '/careers') return <><Header /><CareersPage /></>
+
+  const [pointer, setPointer] = useState({ x: '62%', y: '45%' })
+  const trackPointer = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    setPointer({ x: `${((event.clientX - rect.left) / rect.width) * 100}%`, y: `${((event.clientY - rect.top) / rect.height) * 100}%` })
+  }
+
+  return <div id="top" className="app-shell">
+    <Header />
+    <main>
+      <section className="hero-section" onMouseMove={trackPointer} style={{ '--pointer-x': pointer.x, '--pointer-y': pointer.y }}>
+        <div className="cursor-glow" /><div className="hero-grid-bg" /><div className="hero-dots" /><div className="light-rays" />
+        <div className="floating-particles" aria-hidden="true">{Array.from({ length: 18 }).map((_, i) => <i key={i} style={{ '--i': i }} />)}</div>
+        <div className="hero-content">
+          <Reveal><span className="hero-badge"><b>NEW</b><i /> Research Driven AI Company</span></Reveal>
+          <Reveal delay={.08}><h1>Engineering<br /><span>Intelligence.</span></h1></Reveal>
+          <Reveal delay={.16}><p className="hero-copy">We engineer intelligent systems, developer platforms, and AI products that transform ideas into real-world impact.</p></Reveal>
+          <Reveal delay={.2} className="hero-pills"><span>Research</span><span>Products</span><span>Infrastructure</span><span>Open Source</span></Reveal>
+          <Reveal delay={.24} className="hero-buttons"><a className="pill-button" href="/products">Explore Products <Icon name="arrow" size={17} /></a><a className="text-button" href="/company">About Aeviris <Icon name="arrow" size={17} /></a></Reveal>
+        </div>
+        <div className="sphere-stage" aria-label="Abstract AI sphere illustration"><div className="neural-backdrop" aria-hidden="true" /><div className="architecture-flow" aria-hidden="true"><span>Neural Network</span><b>↓</b><span>Model Training</span><b>↓</b><span>Optimization</span><b>↓</b><span>Deployment</span><b>↓</b><span>Inference</span></div><div className="sphere-halo" /><div className="ai-sphere"><div className="sphere-network" /><div className="sphere-orbit orbit-one" /><div className="sphere-orbit orbit-two" /><div className="sphere-orbit orbit-three" /><div className="orbit-neurons" aria-hidden="true"><i /><i /><i /><i /><i /><i /></div><div className="sphere-core" /><div className="sphere-labels"><span>AI</span><span>ML</span><span>DL</span><span>CV</span><span>LLM</span></div><span className="sphere-dot dot-one" /><span className="sphere-dot dot-two" /><span className="sphere-dot dot-three" /><span className="sphere-dot dot-four" /></div><div className="sphere-caption">RESEARCH <b>•</b> PRODUCT <b>•</b> IMPACT</div><div className="preview-card learn-card"><span className="mini-status live">LIVE</span><small>▣ &nbsp; Aeviris Learn</small><strong>AI Learning Platform</strong><em>10K+ Topics</em><a href="#products">Explore →</a></div><div className="preview-card edge-card"><span className="mini-status soon">SOON</span><small>▣ &nbsp; Edge AI SDK</small><strong>On-device intelligence</strong><em>Coming soon</em></div><div className="preview-card agent-card"><span className="mini-status beta">BETA</span><small>&lt;/&gt; &nbsp; Aeviris API</small><strong>Developer Platform</strong><em>Build with Aeviris</em></div><div className="preview-card vision-card"><span className="mini-status soon">SOON</span><small>◉ &nbsp; Vision AI</small><strong>Computer Vision Platform</strong><em>Coming soon</em></div><div className="preview-card data-card"><span className="mini-status soon">SOON</span><small>▤ &nbsp; Data Intelligence</small><strong>AI analytics platform</strong><em>Coming soon</em></div><div className="preview-card llm-card"><span className="mini-status soon">SOON</span><small>◈ &nbsp; LLM Studio</small><strong>Foundation models</strong><em>Coming soon</em></div></div>
+      </section>
+
+      <div className="hero-capabilities"><div className="capability-track">{['Agentic AI', 'Computer Vision', 'LLMs & NLP', 'Edge AI', 'Developer Tools', 'Research', 'Open Source', 'Agentic AI', 'Computer Vision', 'LLMs & NLP', 'Edge AI', 'Developer Tools', 'Research', 'Open Source'].map((item, i) => <span key={`${item}-${i}`}>✦ &nbsp; {item}</span>)}</div></div>
+
+      <section id="products" className="split-section page-width"><Reveal><SectionHeading eyebrow="About Aeviris" title={<>Technology with a<br /><em>reason to exist.</em></>} copy="Aeviris is an artificial intelligence research and product company focused on creating intelligent software that solves meaningful real-world problems. We combine cutting-edge research with product engineering to make advanced AI practical, accessible, and trustworthy." /><a href="/company/about" className="text-button">Discover our company <Icon name="arrow" size={17} /></a></Reveal><Reveal delay={.12} className="ai-panel"><div className="panel-glow" /><div className="panel-lines" /><div className="panel-content"><span className="panel-kicker">AEVIRIS / NEURAL SYSTEM 01</span><div className="neural-system" aria-label="Abstract neural network illustration"><svg viewBox="0 0 500 330" role="img" aria-label="Connected neural network"><defs><linearGradient id="neuralLine" x1="0" x2="1"><stop offset="0" stopColor="#4f7cff" stopOpacity=".25" /><stop offset=".5" stopColor="#8f7cff" stopOpacity=".9" /><stop offset="1" stopColor="#36d399" stopOpacity=".4" /></linearGradient><filter id="neuralGlow"><feGaussianBlur stdDeviation="5" result="blur" /><feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge></filter></defs><g className="neural-links" stroke="url(#neuralLine)" strokeWidth="1.2" fill="none"><path d="M54 70 166 48 252 106 350 54 448 105" /><path d="M54 70 164 164 252 106 344 174 448 105" /><path d="M54 70 164 273 252 216 344 174 448 265" /><path d="M54 270 164 273 252 216 350 282 448 265" /><path d="M166 48 164 164 164 273" /><path d="M252 106 252 216" /><path d="M350 54 344 174 350 282" /><path d="M95 118 206 216 306 106 405 207" /><path d="M95 229 206 48 306 216 405 105" /></g><g className="neural-nodes" filter="url(#neuralGlow)"><circle cx="54" cy="70" r="7" /><circle cx="54" cy="270" r="7" /><circle cx="166" cy="48" r="6" /><circle cx="164" cy="164" r="7" /><circle cx="164" cy="273" r="6" /><circle className="neural-core" cx="252" cy="106" r="16" /><circle cx="252" cy="216" r="8" /><circle cx="350" cy="54" r="6" /><circle cx="344" cy="174" r="7" /><circle cx="350" cy="282" r="6" /><circle cx="448" cy="105" r="7" /><circle cx="448" cy="265" r="7" /><circle cx="95" cy="118" r="5" /><circle cx="95" cy="229" r="5" /><circle cx="405" cy="207" r="5" /></g></svg><div className="neural-readout"><span>INPUT</span><b>INTELLIGENCE</b><span>OUTPUT</span></div></div><p>Research into<br /><strong>real intelligence.</strong></p><div className="panel-footer"><span>AI / 01</span><span>∞</span></div></div></Reveal></section>
+
+      <section id="research" className="values-section page-width"><Reveal><SectionHeading eyebrow="What guides us" title={<>Built on principles.<br /><em>Driven by curiosity.</em></>} copy="Great technology is shaped as much by how it is built as by what it can do." /></Reveal><div className="values-grid">{values.map(([icon, title, copy], index) => <Reveal key={title} delay={index * .05}><article className="value-card"><span className="value-icon">{icon}</span><h3>{title}</h3><p>{copy}</p><span className="value-arrow">↗</span></article></Reveal>)}</div></section>
+
+
+      <section className="impact-section page-width"><Reveal><SectionHeading eyebrow="How we build" title={<>From Research<br /><em>to Reality.</em></>} copy="Every breakthrough begins with curiosity. At Aeviris AI, research is transformed into engineering, engineering becomes products, and products create meaningful impact." /></Reveal><div className="impact-grid"><Reveal delay={.05}><article className="impact-card research-card-new"><div className="impact-visual blueprint-visual"><span className="blueprint-core">◎</span><i /><i /><i /><i /><b>IDEAS / EXPERIMENTS / VALIDATION</b><div className="research-mini-flow"><span>Ideas</span><span>Experiments</span><span>Models</span><span>Validation</span></div></div><p className="impact-kicker">Foundation</p><h3>Research</h3><p>Every product begins with deep research. We explore new ideas, study emerging technologies, and experiment continuously before writing production code.</p><ul><li>Machine Learning</li><li>Computer Vision</li><li>Agentic AI</li><li>Edge AI</li><li>Research</li></ul><a href="#research">Explore Research <Icon name="arrow" size={15} /></a></article></Reveal><Reveal delay={.12}><article className="impact-card products-card-new"><div className="impact-visual interface-visual"><div className="ui-window"><span /><span /><span /><b>AEVIRIS / PRODUCTS</b><div className="ui-lines"><i /><i /><i /></div></div><div className="ui-window small-window"><b>API / SDK</b><div className="ui-blocks"><i /><i /><i /></div></div></div><p className="impact-kicker">Engineering</p><h3>Products</h3><p>Research becomes practical software. We design AI products that solve meaningful real-world problems while remaining intuitive, scalable, and reliable.</p><div className="product-mini-list"><span><b>Aeviris Learn</b><em>LIVE</em></span><span><b>Aeviris API</b><em>BETA</em></span><span><b>Edge SDK</b><em>SOON</em></span><span><b>AI Platform</b><em>BUILDING</em></span></div><a href="/products">Browse Products <Icon name="arrow" size={15} /></a></article></Reveal><Reveal delay={.19}><article className="impact-card impact-card-new"><div className="impact-visual network-visual"><span className="network-world">◎</span><i /><i /><i /><i /><i /><b>GLOBAL / HUMAN / LONG-TERM</b></div><p className="impact-kicker">Global</p><h3>Impact</h3><p>Technology should improve people's lives. Our goal is to create AI systems that empower developers, learners, businesses, and future innovators around the world.</p><div className="impact-card-metrics"><span><b>15+</b>Research Areas</span><span><b>8</b>Products</span><span><b>10K+</b>Developers</span><span><b>Global</b>Vision</span></div><a href="/company">See Our Vision <Icon name="arrow" size={15} /></a></article></Reveal></div><div className="impact-process"><div className="process-line"><span /></div>{['Ideas', 'Research', 'Engineering', 'Products', 'Deployment', 'Impact'].map((item, index) => <div className="process-step" key={item}><strong>{item}</strong>{index < 5 && <span className="process-arrow">→</span>}</div>)}</div><p className="impact-philosophy">Everything we build follows one philosophy.<br /><strong>Research first. Engineering always. Impact forever.</strong></p></section>
+
+      <section className="culture-section"><div className="page-width"><Reveal><p className="eyebrow">Our culture</p><blockquote>“Great AI is built by curious people.”</blockquote></Reveal><div className="culture-grid">{[['01', 'Continuous Learning'], ['02', 'Ownership'], ['03', 'Innovation'], ['04', 'Collaboration']].map(([number, title]) => <div className="culture-card" key={title}><span>{number}</span><h3>{title}</h3><p>Make space to learn, question, and make the work better.</p></div>)}</div></div></section>
+
+
+      <section id="blog" className="blog-section page-width"><Reveal><SectionHeading eyebrow="From the lab" title={<>Ideas, research,<br /><em>and the work behind it.</em></>} /></Reveal><div className="blog-grid">{[['RESEARCH', 'The case for useful intelligence', 'What it means to build AI that earns a place in everyday life.'], ['ENGINEERING', 'Designing systems people can trust', 'A look behind the choices that make complex technology feel simple.'], ['PERSPECTIVE', 'The long game in AI', 'Why lasting progress needs patience, principles, and imagination.']].map(([tag, title, copy], index) => <Reveal key={title} delay={index * .07}><article className="blog-card"><div className={`blog-art art-${index}`}><span>{index === 0 ? '◌' : index === 1 ? '⌁' : '∞'}</span></div><div className="blog-card-body"><span>{tag}</span><h3>{title}</h3><p>{copy}</p><a href="#contact">Read more <Icon name="arrow" size={16} /></a></div></article></Reveal>)}</div></section>
+
+      <section className="final-cta"><div className="mesh" /><Reveal><p className="eyebrow">The next chapter is yours too</p><h2>Let’s build AI<br /><em>that matters.</em></h2><a href="#contact" className="pill-button">Get Started <Icon name="arrow" size={17} /></a></Reveal></section>
+    </main>
+    <footer className="site-footer"><div className="page-width footer-grid"><div className="footer-brand-column"><a href="#top" className="brand">AEVIRIS<sup>™</sup></a><p>Building AI products that expand<br />human potential.</p><a className="footer-email" href="mailto:hello@aeviris.com">hello@aeviris.com</a><div className="footer-socials"><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="AEVIRIS on GitHub"><Icon name="github" size={18} /></a><a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="AEVIRIS on LinkedIn"><Icon name="linkedin" size={18} /></a></div></div><div><strong>Company</strong><a href="/company">About</a><a href="/careers">Careers</a><a href="mailto:hello@aeviris.com">Contact</a></div><div><strong>Explore</strong><a href="/products">Products</a><a href="#research">Research</a><a href="#developers">Developers</a><a href="#open-source">Open Source</a></div><div><strong>Resources</strong><a href="#blog">Blog</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div><div className="footer-newsletter"><strong>Newsletter</strong><p>Occasional notes on research, products, and the future of intelligence.</p><form onSubmit={(event) => event.preventDefault()}><input type="email" aria-label="Email for newsletter" placeholder="Your email address" required /><button type="submit" aria-label="Subscribe to newsletter"><Icon name="arrow" size={16} /></button></form></div></div><div className="page-width footer-bottom"><span>© 2026 AEVIRIS. All rights reserved.</span><span>Made with curiosity.</span></div></footer>
+  </div>
+}
+
+export default App
