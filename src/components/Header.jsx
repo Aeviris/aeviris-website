@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 
 const links = [
   ['Home', '#top'],
-  ['Products', '/products'],
+  ['Products', '#/products'],
   ['Research', '#research'],
-  ['Company', '/company'],
+  ['Company', '#/company'],
 ]
-const companyLinks = [['About', '/company/about'], ['Team', '/company#team'], ['Partners', '/company#partners'], ['Careers', '/careers'], ['Contact', '/company#contact'], ['Blog', '/company#blog']]
+const companyLinks = [['About', '#/company/about'], ['Team', '#/company'], ['Partners', '#/company'], ['Careers', '#/careers'], ['Contact', '#/company'], ['Blog', '#/company']]
 
 function Icon({ name, size = 19 }) {
   const paths = {

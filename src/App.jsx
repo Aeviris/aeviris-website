@@ -29,11 +29,12 @@ function SectionHeading({ eyebrow, title, copy }) {
 }
 
 function App() {
-  if (window.location.pathname === '/company') return <><Header /><CompanyPage /></>
-  if (window.location.pathname === '/company/about') return <><Header /><AboutPage /></>
-  if (window.location.pathname === '/products') return <><Header /><ProductsPage /></>
-  if (window.location.pathname === '/careers') return <><Header /><CareersPage /></>
-  if (window.location.pathname === '/work-with-us') return <><Header /><WorkWithUsPage /></>
+  const route = window.location.hash.startsWith('#/') ? window.location.hash.slice(1).split('?')[0] : window.location.pathname
+  if (route === '/company') return <><Header /><CompanyPage /></>
+  if (route === '/company/about') return <><Header /><AboutPage /></>
+  if (route === '/products') return <><Header /><ProductsPage /></>
+  if (route === '/careers') return <><Header /><CareersPage /></>
+  if (route === '/work-with-us') return <><Header /><WorkWithUsPage /></>
 
   const [pointer, setPointer] = useState({ x: '62%', y: '45%' })
   const trackPointer = (event) => {
@@ -52,7 +53,7 @@ function App() {
           <Reveal delay={.08}><h1>Engineering<br /><span>Intelligence.</span></h1></Reveal>
           <Reveal delay={.16}><p className="hero-copy">We engineer intelligent systems, developer platforms, and AI products that transform ideas into real-world impact.</p></Reveal>
           <Reveal delay={.2} className="hero-pills"><span>Research</span><span>Products</span><span>Infrastructure</span><span>Open Source</span></Reveal>
-          <Reveal delay={.24} className="hero-buttons"><a className="pill-button" href="/products">Explore Products <Icon name="arrow" size={17} /></a><a className="text-button" href="/company">About Aeviris <Icon name="arrow" size={17} /></a></Reveal>
+          <Reveal delay={.24} className="hero-buttons"><a className="pill-button" href="#/products">Explore Products <Icon name="arrow" size={17} /></a><a className="text-button" href="#/company">About Aeviris <Icon name="arrow" size={17} /></a></Reveal>
         </div>
         <div className="sphere-stage" aria-label="Abstract AI sphere illustration"><div className="neural-backdrop" aria-hidden="true" /><div className="architecture-flow" aria-hidden="true"><span>Neural Network</span><b>↓</b><span>Model Training</span><b>↓</b><span>Optimization</span><b>↓</b><span>Deployment</span><b>↓</b><span>Inference</span></div><div className="sphere-halo" /><div className="ai-sphere"><div className="sphere-network" /><div className="sphere-orbit orbit-one" /><div className="sphere-orbit orbit-two" /><div className="sphere-orbit orbit-three" /><div className="orbit-neurons" aria-hidden="true"><i /><i /><i /><i /><i /><i /></div><div className="sphere-core" /><div className="sphere-labels"><span>AI</span><span>ML</span><span>DL</span><span>CV</span><span>LLM</span></div><span className="sphere-dot dot-one" /><span className="sphere-dot dot-two" /><span className="sphere-dot dot-three" /><span className="sphere-dot dot-four" /></div><div className="sphere-caption">RESEARCH <b>•</b> PRODUCT <b>•</b> IMPACT</div><div className="preview-card learn-card"><span className="mini-status live">LIVE</span><small>▣ &nbsp; Aeviris Learn</small><strong>AI Learning Platform</strong><em>10K+ Topics</em><a href="#products">Explore →</a></div><div className="preview-card edge-card"><span className="mini-status soon">SOON</span><small>▣ &nbsp; Edge AI SDK</small><strong>On-device intelligence</strong><em>Coming soon</em></div><div className="preview-card agent-card"><span className="mini-status beta">BETA</span><small>&lt;/&gt; &nbsp; Aeviris API</small><strong>Developer Platform</strong><em>Build with Aeviris</em></div><div className="preview-card vision-card"><span className="mini-status soon">SOON</span><small>◉ &nbsp; Vision AI</small><strong>Computer Vision Platform</strong><em>Coming soon</em></div><div className="preview-card data-card"><span className="mini-status soon">SOON</span><small>▤ &nbsp; Data Intelligence</small><strong>AI analytics platform</strong><em>Coming soon</em></div><div className="preview-card llm-card"><span className="mini-status soon">SOON</span><small>◈ &nbsp; LLM Studio</small><strong>Foundation models</strong><em>Coming soon</em></div></div>
       </section>
