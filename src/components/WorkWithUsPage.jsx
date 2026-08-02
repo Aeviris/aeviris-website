@@ -1,0 +1,18 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Icon } from './Header'
+
+const collaborationPaths = [
+  ['01', 'Research Collaborations', 'Explore hard questions and turn new ideas into useful intelligence.'],
+  ['02', 'Product Partnerships', 'Create thoughtful products and platforms with complementary teams.'],
+  ['03', 'Enterprise AI Projects', 'Solve meaningful business challenges with practical AI systems.'],
+  ['04', 'Open Source Contributions', 'Build openly, share knowledge, and make intelligent tools more accessible.'],
+  ['05', 'Academic Collaborations', 'Connect research, learning, and the next generation of builders.'],
+  ['06', 'Startup & Innovation', 'Bring an ambitious idea, an early prototype, or a new perspective.'],
+  ['07', 'Media & Speaking', 'Start a conversation around responsible and useful artificial intelligence.'],
+  ['08', 'Careers & Internships', 'Join the people building the next chapter of AEVIRIS.'],
+]
+
+export default function WorkWithUsPage() {
+  return <main className="work-page"><div className="work-page-glow" /><div className="work-page-inner"><motion.section className="work-hero" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}><p className="eyebrow">Work with us</p><h1>Build the Future<br /><em>of AI Together.</em></h1><p className="work-lead">At AEVIRIS, we believe that meaningful innovation is built through collaboration. Whether you&apos;re a researcher exploring new ideas, a developer building intelligent systems, a designer shaping user experiences, a student eager to learn, or an organization looking to solve real-world challenges with AI, we&apos;d love to hear from you.</p><p className="work-copy">We&apos;re always open to conversations that create value. You don&apos;t need a perfect proposal or a finished product—just curiosity, ambition, and a genuine desire to build something meaningful. Some collaborations begin with a research question, others with a product idea, a partnership opportunity, an internship inquiry, or simply a shared vision for the future of artificial intelligence.</p><p className="work-copy">If you&apos;re interested in working with AEVIRIS, tell us about yourself, your goals, and how you think we can collaborate. Every message is reviewed carefully, and we aim to respond within <strong>24–48 business hours.</strong></p></motion.section><motion.section className="collaboration-section" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .12 }}><div className="work-section-heading"><p className="eyebrow">Ways to collaborate</p><h2>Bring your curiosity.<br /><em>We&apos;ll bring ours.</em></h2></div><div className="collaboration-grid">{collaborationPaths.map(([number, title, description]) => <article className="collaboration-card" key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p><i>↗</i></article>)}</div></motion.section><motion.section className="work-email-card" initial={{ opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: .2 }}><div><p className="eyebrow">Let&apos;s start the conversation</p><h2>Ready to collaborate?</h2><p>Whether you&apos;re reaching out with an idea, a challenge, or an opportunity, we&apos;re excited to explore what&apos;s possible together.</p></div><div className="work-email-meta"><a href="mailto:hello@aeviris.ai">hello@aeviris.ai <Icon name="arrow" size={19} /></a><span>Average response time</span><strong>24–48 business hours</strong></div></motion.section><p className="work-closing">Together, let&apos;s build AI that <em>truly matters.</em></p></div></main>
+}
