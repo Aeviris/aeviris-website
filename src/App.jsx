@@ -28,15 +28,28 @@ function SectionHeading({ eyebrow, title, copy }) {
   return <div className="section-heading"><p className="eyebrow">{eyebrow}</p><h2>{title}</h2>{copy && <p className="section-copy">{copy}</p>}</div>
 }
 
+function getRoute() {
+  return window.location.hash.startsWith('#/') ? window.location.hash.slice(1).split('?')[0] : window.location.pathname
+}
+
 function App() {
-  const route = window.location.hash.startsWith('#/') ? window.location.hash.slice(1).split('?')[0] : window.location.pathname
+  const [route, setRoute] = useState(getRoute)
+  const [pointer, setPointer] = useState({ x: '62%', y: '45%' })
+  useEffect(() => {
+    const syncRoute = () => setRoute(getRoute())
+    window.addEventListener('hashchange', syncRoute)
+    window.addEventListener('popstate', syncRoute)
+    return () => {
+      window.removeEventListener('hashchange', syncRoute)
+      window.removeEventListener('popstate', syncRoute)
+    }
+  }, [])
   if (route === '/company') return <><Header /><CompanyPage /></>
   if (route === '/company/about') return <><Header /><AboutPage /></>
   if (route === '/products') return <><Header /><ProductsPage /></>
   if (route === '/careers') return <><Header /><CareersPage /></>
   if (route === '/work-with-us') return <><Header /><WorkWithUsPage /></>
 
-  const [pointer, setPointer] = useState({ x: '62%', y: '45%' })
   const trackPointer = (event) => {
     const rect = event.currentTarget.getBoundingClientRect()
     setPointer({ x: `${((event.clientX - rect.left) / rect.width) * 100}%`, y: `${((event.clientY - rect.top) / rect.height) * 100}%` })
