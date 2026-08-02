@@ -28,7 +28,7 @@ export default function Header() {
     const onScroll = () => {
       setScrolled(window.scrollY > 18)
       if (window.location.pathname === '/company') return
-      const candidates = links.filter(([, href]) => href.startsWith('#')).map(([label, href]) => [label, document.querySelector(href)])
+      const candidates = links.filter(([, href]) => href.startsWith('#') && !href.startsWith('#/')).map(([label, href]) => [label, document.querySelector(href)])
       const current = candidates.filter(([, section]) => section && section.getBoundingClientRect().top <= 150).pop()
       setActive(current ? current[0] : 'Home')
     }
