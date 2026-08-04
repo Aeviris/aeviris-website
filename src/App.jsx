@@ -34,9 +34,13 @@ function getRoute() {
 
 function App() {
   const [route, setRoute] = useState(getRoute)
+  const [routeKey, setRouteKey] = useState(() => window.location.hash)
   const [pointer, setPointer] = useState({ x: '62%', y: '45%' })
   useEffect(() => {
-    const syncRoute = () => setRoute(getRoute())
+    const syncRoute = () => {
+      setRoute(getRoute())
+      setRouteKey(window.location.hash)
+    }
     window.addEventListener('hashchange', syncRoute)
     window.addEventListener('popstate', syncRoute)
     return () => {
@@ -47,7 +51,7 @@ function App() {
   if (route === '/company') return <><Header /><CompanyPage /></>
   if (route === '/company/about') return <><Header /><AboutPage /></>
   if (route === '/products') return <><Header /><ProductsPage /></>
-  if (route === '/careers') return <><Header /><CareersPage key={window.location.hash} /></>
+  if (route === '/careers') return <><Header /><CareersPage key={routeKey} /></>
   if (route === '/work-with-us') return <><Header /><WorkWithUsPage /></>
 
   const trackPointer = (event) => {
