@@ -47,7 +47,7 @@ function App() {
   if (route === '/company') return <><Header /><CompanyPage /></>
   if (route === '/company/about') return <><Header /><AboutPage /></>
   if (route === '/products') return <><Header /><ProductsPage /></>
-  if (route === '/careers') return <><Header /><CareersPage /></>
+  if (route === '/careers') return <><Header /><CareersPage key={window.location.hash} /></>
   if (route === '/work-with-us') return <><Header /><WorkWithUsPage /></>
 
   const trackPointer = (event) => {
